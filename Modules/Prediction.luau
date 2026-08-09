@@ -22,13 +22,13 @@ local Prediction = {
 	_EntityLib = nil,
 }
 
-local cloneref = if type(cloneref) == "function" then
-  cloneref
-else
-  function(obj)
-    return obj
-  end
+local cloneref = cloneref or function(obj)
+  return obj
 end
+if type(cloneref) ~= "function" then
+  warn("cloneref broken")
+end
+
 local RunService = cloneref(game:GetService("RunService"))
 local Players = cloneref(game:GetService("Players"))
 local LocalPlayer = Players.LocalPlayer
