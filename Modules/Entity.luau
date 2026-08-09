@@ -585,11 +585,11 @@ function EntityLib:Enable(): ()
    	end),
    }
 
+   Enabled = true
+
    for _, TargetPlayer in ipairs(Players:GetPlayers()) do
    	EntityLib.AddPlayer(TargetPlayer)
    end
-
-   Enabled = true
 end
 
 function EntityLib:Disable(): ()
